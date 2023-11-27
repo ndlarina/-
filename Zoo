@@ -1,0 +1,75 @@
+#include <iostream>
+using namespace std;
+
+class Animal {
+private:
+    string beast;
+    string name;
+    string color;
+    string occupation;
+    string combatstyle;
+    
+public:
+    Animal(string animalBeast, string animalName, string animalColor, string animalOccupation, string animalCombatstyle) {
+        beast = animalBeast;
+        name = animalName;
+        color = animalColor;
+        occupation = animalOccupation;
+        combatstyle = animalCombatstyle;
+    }
+   
+    string getBeast() {
+        return beast;
+    }
+    string getName() {
+        return name;
+    }
+    string getColor() {
+        return color;
+    }
+    string getOccupation() {
+        return occupation;
+    }
+    
+    string getCombatstyle() {
+        return combatstyle;
+    }
+   
+    void setBeast(string animalBeast) {
+        beast = animalBeast;
+    }
+    void setName(string animalName) {
+        name = animalName;
+    }
+    void setColor(string animalColor) {
+        color = animalColor;
+    }
+    void setOccupation(string animalOccupation) {
+        occupation = animalOccupation;
+    }
+    
+    void setCombatstyle(string animalCombatstyle) {
+        combatstyle = animalCombatstyle;
+    }
+   
+    void displayAnimal() {
+        cout << "Beast: " << beast << endl;
+        cout << "Name: " << name << endl;
+        cout << "Color: " << color << endl;
+        cout << "Occupation: " << occupation << endl;
+        cout << "Combat style: " << combatstyle << endl;
+        cout << endl;
+    }
+};
+
+int main() {
+    Animal MasterShifu("Red panda", "Shifu", "Orange, dark brown and white", "Kung fu master", "Red panda style of kung fu");
+    Animal MasterOogway("Turtle", "Oogway", "Green and white", "Senior master of the Jade Palace", "Tortoise Style of kung fu");
+    Animal Po("Panda", "Po", "Black and white", "Noodle-maker / Dragon Warrior", "Improvised style of kung fu");
+
+    MasterShifu.displayAnimal();
+    MasterOogway.displayAnimal();
+    Po.displayAnimal();
+    
+    return 0;
+}
