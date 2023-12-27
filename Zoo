@@ -2,7 +2,7 @@
 using namespace std;
 
 class Animal {
-private:
+protected:
     string beast;
     string name;
     string color;
@@ -62,14 +62,44 @@ public:
     }
 };
 
-int main() {
-    Animal MasterShifu("Red panda", "Shifu", "Orange, dark brown and white", "Kung fu master", "Red panda style of kung fu");
-    Animal MasterOogway("Turtle", "Oogway", "Green and white", "Senior master of the Jade Palace", "Tortoise Style of kung fu");
-    Animal Po("Panda", "Po", "Black and white", "Noodle-maker / Dragon Warrior", "Improvised style of kung fu");
+class KungFuAnimal : public Animal {
+private:
+    string kungFuRank;
+    
+public:
+    KungFuAnimal(string animalBeast, string animalName, string animalColor, string animalOccupation, string animalCombatstyle, string kungFuRank)
+    : Animal(animalBeast, animalName, animalColor, animalOccupation, animalCombatstyle)
+    {
+        this->kungFuRank = kungFuRank;
+    }
+    
+    string getKungFuRank() {
+        return kungFuRank;
+    }
+    
+    void setKungFuRank(string rank) {
+        kungFuRank = rank;
+    }
+    
+    void displayKungFuAnimal() {
+        displayAnimal();
+        cout << "Kung Fu Rank: " << kungFuRank << endl;
+        cout << endl;
+    }
+};
 
-    MasterShifu.displayAnimal();
-    MasterOogway.displayAnimal();
-    Po.displayAnimal();
+int main() {
+    KungFuAnimal MasterShifu("Red panda", "Shifu", "Orange, dark brown and white", "Kung fu master", "Red panda style of kung fu", "Grandmaster");
+    KungFuAnimal MasterOogway("Turtle", "Oogway", "Green and white", "Senior master of the Jade Palace", "Tortoise Style of kung fu", "Great Sage");
+    KungFuAnimal Po("Panda", "Po", "Black and white", "Noodle-maker / Dragon Warrior", "Improvised style of kung fu", "Dragon Warrior");
+
+    MasterShifu.displayKungFuAnimal();
+    MasterOogway.displayKungFuAnimal();
+    Po.displayKungFuAnimal();
     
     return 0;
 }
+
+
+
+8780 из 16384
